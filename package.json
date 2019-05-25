@@ -4,7 +4,7 @@
   "license": "",
   "description": "ngx admin template usage for custom application",
   "author": "Umar Bilal <umar-bilal@hotmail.com>",
-  "main": "index.js",
+  "main": "server.js",
   "private": false,
   "engines": {
     "node": ">=8.10.0",
