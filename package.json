@@ -2,7 +2,7 @@
   "name": "time-tracker",
   "version": "1.0.0",
   "license": "",
-  "description": "A Boilerplate application for building REST APIs using express, mongoose in ES6 with code coverage",
+  "description": "ngx admin template usage for custom application",
   "author": "Umar Bilal <umar-bilal@hotmail.com>",
   "main": "index.js",
   "private": false,
