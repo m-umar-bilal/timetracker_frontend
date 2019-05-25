@@ -17,8 +17,9 @@
   "scripts": {
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
-    "start": "node server.js",
-    "build": "ng build --aot --prod",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:prod": "npm run build -- --prod --aot",
     "test": "ng test",
     "test:coverage": "rimraf coverage && npm run test -- --code-coverage",
     "lint": "ng lint",
@@ -30,8 +31,7 @@
     "docs": "compodoc -p src/tsconfig.app.json -d docs",
     "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "prepush": "npm run lint:ci",
-    "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
-    "postinstall": "ng build --aot --prod"
+    "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
     "@agm/core": "^1.0.0-beta.5",
@@ -83,9 +83,9 @@
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.12.1",
-    "@angular/cli": "^7.3.7",
+    "@angular-devkit/build-angular": "0.12.1",
     "@angular/compiler-cli": "^7.2.11",
+    "@angular/cli": "^7.3.7",
     "@angular/language-service": "7.2.11",
     "@compodoc/compodoc": "1.0.1",
     "@fortawesome/fontawesome-free": "^5.2.0",
@@ -114,9 +114,5 @@
     "tslint": "5.7.0",
     "tslint-language-service": "^0.9.9",
     "typescript": "3.2.4"
-  },
-  "engines": {
-    "node": "8.12.0",
-    "npm": "6.4.1"
   }
 }
