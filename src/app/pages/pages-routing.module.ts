@@ -40,6 +40,13 @@ const routes: Routes = [{
     path: 'forms',
     loadChildren: './forms/forms.module#FormsModule',
   }, {
+    path: 'projects',
+    loadChildren: './projects/projects.module#ProjectsModule',
+  },{
+    path: 'timelogs',
+    loadChildren: './timelogs/timelogs.module#TimelogsModule',
+  },
+    {
     path: 'tables',
     loadChildren: './tables/tables.module#TablesModule',
   }, {
@@ -47,7 +54,7 @@ const routes: Routes = [{
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
   }, {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'projects/view',
     pathMatch: 'full',
   }, {
     path: '**',

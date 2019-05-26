@@ -1,0 +1,10 @@
+<nb-card>
+  <nb-card-header>
+    Projects View
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" (editConfirm)="updateRecord($event)" [source]="source" (deleteConfirm)="deleteRecord($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

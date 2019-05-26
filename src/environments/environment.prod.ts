@@ -5,4 +5,6 @@
  */
 export const environment = {
   production: true,
+  API_URL: "https://timetracker-backend.herokuapp.com/api"
+
 };

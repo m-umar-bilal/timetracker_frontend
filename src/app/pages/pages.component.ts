@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import { MENU_ITEMS } from './pages-menu';
+import {MENU_ITEMS_ADMIN, MENU_ITEMS_scientist} from './pages-menu';
+import {NbAuthJWTToken, NbAuthService} from "@nebular/auth";
 
 @Component({
   selector: 'ngx-pages',
@@ -14,5 +15,20 @@ import { MENU_ITEMS } from './pages-menu';
 })
 export class PagesComponent {
 
-  menu = MENU_ITEMS;
+  menu = MENU_ITEMS_scientist;
+  private user: any;
+  constructor(private authService: NbAuthService){
+    this.authService.onTokenChange()
+      .subscribe((token: NbAuthJWTToken) => {
+
+        if (token.isValid()) {
+          this.user = token.getPayload(); // here we receive a payload from the token and assigne it to our `user` variable
+          if(this.user.type==='admin') {
+            this.menu = MENU_ITEMS_ADMIN
+          }
+        }
+
+      });
+
+  }
 }
